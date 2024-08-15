@@ -1,0 +1,386 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* Importa las fuentes desde Google Fonts. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Establece el margen y el relleno a 0, el box-sizing a border-box y la fuente predeterminada a Montserrat para todos los elementos. */
+
+body {
+  background-color: #c9d6ff;
+  background: linear-gradient(to right #e2e2e2, #c9d6ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Estilo para el body:
+   - Color de fondo con un degradado lineal.
+   - Centra el contenido tanto horizontal como verticalmente usando flexbox.
+   - Altura de la ventana gráfica (100vh).
+*/
+
+.container {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+}
+
+/* Estilo para el contenedor principal:
+   - Fondo blanco con bordes redondeados.
+   - Sombra para darle un efecto de elevación.
+   - Posición relativa y overflow hidden para manejar el contenido.
+   - Ancho fijo de 768px, pero adaptable al 100% del ancho de la pantalla si es menor.
+   - Altura mínima de 480px.
+*/
+
+.container p {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  margin: 20px 0;
+}
+
+/* Estilo para los párrafos dentro del contenedor:
+   - Tamaño de fuente de 14px.
+   - Altura de línea de 20px y espacio entre letras de 0.3px.
+   - Margen vertical de 20px.
+*/
+
+.container samp {
+  font-size: 12px;
+}
+
+/* Estilo para el elemento <samp> dentro del contenedor:
+   - Tamaño de fuente de 12px.
+*/
+
+.container a {
+  font-size: 17px;
+  text-decoration: none;
+  margin: 15px 0 10px;
+}
+
+/* Estilo para los enlaces dentro del contenedor:
+   - Tamaño de fuente de 17px.
+   - Sin subrayado.
+   - Margen: 15px arriba y abajo, 10px abajo.
+*/
+
+.container button {
+  background-color: #8805A3;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Estilo para los botones dentro del contenedor:
+   - Fondo morado con texto blanco.
+   - Tamaño de fuente de 12px.
+   - Relleno de 10px arriba/abajo y 45px izquierda/derecha.
+   - Borde transparente y esquinas redondeadas.
+   - Fuente en negrita y texto en mayúsculas.
+   - Margen superior de 10px.
+   - Cursor de puntero para indicar que es interactivo.
+*/
+
+.container button.hidden {
+  background-color: transparent;
+  border-color: #fff;
+}
+
+/* Estilo para los botones con la clase 'hidden':
+   - Fondo transparente y borde blanco.
+*/
+
+.container form {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+}
+
+/* Estilo para los formularios dentro del contenedor:
+   - Fondo blanco.
+   - Uso de flexbox para centrar el contenido horizontal y verticalmente.
+   - Dirección de flexión en columna.
+   - Relleno horizontal de 40px.
+   - Altura completa del contenedor.
+*/
+
+.container input {
+  background-color: #eee;
+  border: none;
+  margin: 8px 0;
+  padding: 10px 15px;
+  font-size: 13px;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+
+/* Estilo para los inputs dentro del contenedor:
+   - Fondo gris claro.
+   - Sin borde.
+   - Margen vertical de 8px.
+   - Relleno de 10px arriba/abajo y 15px izquierda/derecha.
+   - Tamaño de fuente de 13px.
+   - Esquinas redondeadas.
+   - Ancho del 100%.
+   - Sin contorno.
+*/
+
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Estilo para el contenedor de formularios:
+   - Posición absoluta en la parte superior.
+   - Altura completa.
+   - Transición suave para todos los cambios de 0.6 segundos.
+*/
+
+.form-container .fp {
+  font-size: 12px;
+}
+
+/* Estilo para el enlace de "Forget password?" dentro del contenedor de formularios:
+   - Tamaño de fuente de 12px.
+*/
+
+.sign-in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+/* Estilo para el formulario de inicio de sesión:
+   - Posición a la izquierda (0).
+   - Ancho del 50%.
+   - Z-index de 2 para que se superponga sobre el formulario de registro.
+*/
+
+.container.active .sign-in {
+  transform: translateX(100%);
+}
+
+/* Estilo para el formulario de inicio de sesión cuando el contenedor tiene la clase 'active':
+   - Mueve el formulario fuera de la vista con translateX.
+*/
+
+.sign-up {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+/* Estilo para el formulario de registro:
+   - Posición a la izquierda (0).
+   - Ancho del 50%.
+   - Opacidad inicial de 0 (invisible).
+   - Z-index de 1 (detrás del formulario de inicio de sesión).
+*/
+
+.container.active .sign-up {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+/* Estilo para el formulario de registro cuando el contenedor tiene la clase 'active':
+   - Mueve el formulario al frente con translateX.
+   - Cambia la opacidad a 1 (visible).
+   - Z-index de 5 para superponerse.
+   - Aplica la animación 'move'.
+*/
+
+@keyframes move {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+/* Definición de la animación 'move':
+   - Desde 0% hasta 49.99%: opacidad 0 y z-index 1 (invisible y detrás).
+   - Desde 50% hasta 100%: opacidad 1 y z-index 5 (visible y adelante).
+*/
+
+.social-icons {
+  margin: 20px 0;
+}
+
+/* Margen vertical de 20px para el contenedor de iconos sociales. */
+
+.social-icons a {
+  border-radius: 20%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 3px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+}
+
+/* Estilo para los enlaces de iconos sociales:
+   - Bordes redondeados al 20%.
+   - Uso de flexbox para centrar el contenido.
+   - Margen horizontal de 3px.
+   - Tamaño de 40px x 40px.
+   - Borde negro de 1px.
+*/
+
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  z-index: 1000;
+  border-radius: 150px 0 0 100px;
+}
+
+/* Estilo para el contenedor del toggle:
+   - Posición absoluta.
+   - Parte superior y izquierda del contenedor.
+   - Ancho del 50%.
+   - Altura completa.
+   - Ocultar desbordamiento.
+   - Transición suave para todos los cambios.
+   - Z-index de 1000 (superior
+  - Gradiente de borde redondeado para la esquina superior izquierda.
+*/
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+  border-radius: 0 150px 100px 0;
+}
+
+/* Estilo para el contenedor del toggle cuando el contenedor tiene la clase 'active':
+   - Mueve el contenedor fuera de la vista con translateX.
+   - Cambia el gradiente de borde redondeado para la esquina superior derecha.
+*/
+
+.toggle {
+  background-color: #8805A3;
+  height: 100%;
+  background: linear-gradient(to right #5c6bc0, #8805A3);
+  color: #fff;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+/* Estilo para el toggle:
+   - Color de fondo púrpura.
+   - Gradiente lineal de color de fondo.
+   - Color de texto blanco.
+   - Posición relativa y transición suave.
+*/
+
+.container.active .toggle {
+  transform: translateX(50%);
+}
+
+/* Estilo para el toggle cuando el contenedor tiene la clase 'active':
+   - Mueve el toggle hacia la vista con translateX.
+*/
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 30px;
+  text-align: center;
+  top: 0;
+  transform: translateX(0);
+  transition: all 0.6s ease-in-out;
+}
+
+/* Estilo para el panel de toggle:
+   - Posición absoluta.
+   - Ancho del 50%.
+   - Altura completa.
+   - Uso de flexbox para centrar el contenido.
+   - Relleno horizontal de 30px.
+   - Alineación de texto al centro.
+   - Transición suave.
+*/
+
+.toggle-left {
+  transform: translateX(-200%);
+}
+
+/* Estilo para el panel izquierdo del toggle:
+   - Mueve el panel fuera de la vista con translateX.
+*/
+
+.container.active .toggle-left {
+  transform: translateX(0);
+}
+
+/* Estilo para el panel izquierdo del toggle cuando el contenedor tiene la clase 'active':
+   - Mueve el panel hacia la vista con translateX.
+*/
+
+.toggle-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+/* Estilo para el panel derecho del toggle:
+   - Alinea el panel a la derecha.
+   - Mueve el panel hacia la vista con translateX.
+*/
+
+.container.active .toggle-right {
+  transform: translateX(200%);
+}
+
+/* Estilo para el panel derecho del toggle cuando el contenedor tiene la clase 'active':
+   - Mueve el panel fuera de la vista con translateX.
+*/
