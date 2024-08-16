@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        :root {
+            --background: #ffffff;
+            --foreground: #1e1e1e;
+            --card: #2d2d2d;
+            --card-foreground: #ffffff;
+            --primary: #0077b6;
+            --secondary: #27c93f;
+            --muted: #9e9e9e;
+            --border: #0077b6;
+            --ring: #0077b6;
+            --radius: 0.5rem;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 28rem;
+            background-color: var(--card);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .status-indicators {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-indicator {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        .status-indicator:nth-child(1) {
+            background-color: #ff5f56;
+        }
+
+        .status-indicator:nth-child(2) {
+            background-color: #ffbd2e;
+        }
+
+        .status-indicator:nth-child(3) {
+            background-color: #27c93f;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--muted);
+        }
+
+        input {
+            width: 100%;
+            padding: 0.5rem;
+            background-color: #3a3a3a;
+            border-radius: var(--radius);
+            border: 1px solid transparent;
+            color: var(--card-foreground);
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--ring);
+            box-shadow: 0 0 0 2px rgba(0, 119, 182, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: var(--radius);
+            font-weight: bold;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .sign-in-button {
+            background-color: var(--secondary);
+        }
+
+        .sign-in-button:hover {
+            background-color: #1e8d2e;
+        }
+
+        .update-button {
+            background-color: var(--secondary);
+        }
+
+        .update-button:hover {
+            background-color: #1e8d2e;
+        }
+
+        .update-section {
+            margin-top: 1.5rem;
+            background-color: #3a3a3a;
+            border-radius: var(--radius);
+            padding: 1rem;
+        }
+
+        .update-section .status {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .update-section .status span {
+            color: var(--muted);
+        }
+
+        .update-section .status button {
+            padding: 0.25rem 0.75rem;
+            background-color: var(--secondary);
+            color: #ffffff;
+        }
+
+        .update-section .status button:hover {
+            background-color: #1e8d2e;
+        }
+
+        .update-content {
+            height: 10rem;
+            overflow: auto;
+            color: var(--muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="status-indicators">
+            <div class="status-indicator"></div>
+            <div class="status-indicator"></div>
+            <div class="status-indicator"></div>
+        </div>
+        <form class="space-y-4">
+            <div>
+                <label for="username">Username &gt;</label>
+                <input id="username" type="text" placeholder="Enter your username">
+            </div>
+            <div>
+                <label for="password">Password &gt;</label>
+                <input id="password" type="password" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="sign-in-button">
+                Sign In &gt;
+            </button>
+        </form>
+        <div class="update-section">
+            <div class="status">
+                <span>Update Packages &gt;</span>
+                <button class="update-button">Update &gt;</button>
+            </div>
+            <div class="update-content">
+                <p>Updating package.json...</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

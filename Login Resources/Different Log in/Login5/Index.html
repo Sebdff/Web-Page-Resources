@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .bg-custom-card { background-color: #1c1c1e; }
+    .text-custom-green { color: #00d1b2; }
+    .bg-custom-input { background-color: #2c2c2e; }
+    .focus-bg-custom-green:focus { background-color: #00d1b2; }
+    .focus-text-custom-card:focus { color: #1c1c1e; }
+    .text-muted-foreground { color: #6b7280; }
+    .hover-text-custom-green:hover { color: #00d1b2; }
+    .hover-bg-custom-green:hover { background-color: #00b8a9; }
+  </style>
+</head>
+<body class="flex h-screen w-full items-center justify-center bg-[#1c1c1e] px-4">
+  <div class="w-full max-w-md bg-custom-card p-6 rounded-lg shadow-lg">
+    <div class="space-y-1 text-center">
+      <h2 class="text-2xl text-custom-green">Iniciar sesión</h2>
+      <p class="text-muted-foreground">Ingresa tus credenciales para acceder a tu cuenta.</p>
+    </div>
+    <div class="space-y-4 mt-4">
+      <div class="space-y-2">
+        <label for="username" class="text-custom-green">Nombre de usuario</label>
+        <input
+          id="username"
+          placeholder="Ingresa tu nombre de usuario"
+          class="bg-custom-input text-custom-green focus:bg-custom-green focus:text-custom-card p-2 rounded"
+        />
+      </div>
+      <div class="space-y-2">
+        <label for="password" class="text-custom-green">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Ingresa tu contraseña"
+          class="bg-custom-input text-custom-green focus:bg-custom-green focus:text-custom-card p-2 rounded"
+        />
+        <div class="flex items-center justify-between text-sm text-muted-foreground mt-2">
+          <a href="#" class="underline underline-offset-2 hover:text-custom-green">Olvidé mi contraseña</a>
+          <a href="#" class="underline underline-offset-2 hover:text-custom-green text-custom-green">Registrarse</a>
+        </div>
+      </div>
+    </div>
+    <div class="space-y-2 mt-4">
+      <button id="loginButton" class="w-full bg-custom-green text-custom-card hover:bg-custom-green p-2 rounded">Iniciar sesión</button>
+    </div>
+  </div>
+
+  <script>
+    // Aquí puedes agregar funcionalidades JavaScript si es necesario
+    document.getElementById('loginButton').addEventListener('click', function() {
+      alert('Iniciar sesión clickeado');
+    });
+  </script>
+</body>
+</html>
+
