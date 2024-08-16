@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form with Color Picker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --light-color: #00f7ff;
+        }
+
+        .bg-light-on {
+            background-color: var(--light-color);
+        }
+
+        .text-light-on {
+            color: var(--light-color);
+            text-shadow: 0 0 15px var(--light-color), 0 0 30px var(--light-color);
+        }
+
+        .border-light-on {
+            border-color: var(--light-color);
+            box-shadow: 0 0 10px var(--light-color);
+        }
+
+        .shadow-light-on {
+            box-shadow: 0 0 15px var(--light-color);
+        }
+
+        .accent-light-on {
+            accent-color: var(--light-color);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-black">
+    <div class="relative w-96 h-[30rem] bg-gray-800 rounded-2xl flex flex-col items-center pt-12">
+        <div
+            class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[31.25rem] h-[0.625rem] rounded-2xl bg-gray-800 transition-all duration-500"
+            id="login-light"></div>
+        <form class="relative w-full max-w-xs">
+            <div class="absolute top-2 right-2">
+                <input type="color" id="color-input" class="w-10 h-10 cursor-pointer" value="#00f7ff">
+            </div>
+            <input type="checkbox" id="light-toggle" class="hidden">
+            <label for="light-toggle"
+                class="absolute top-4 right-[-3.75rem] w-[3.75rem] h-[7.5rem] bg-gray-900 rounded-lg cursor-pointer flex items-center justify-center transition-all duration-500"
+                id="toggle-label">
+                <span class="text-white uppercase" id="toggle-off">off</span>
+                <span class="text-white uppercase hidden" id="toggle-on">on</span>
+            </label>
+            <div
+                class="absolute top-[-100%] left-0 w-full h-[59.375rem] bg-gradient-to-b from-white via-transparent to-transparent transition-all duration-500"
+                id="light"></div>
+            <h2 class="text-2xl text-white text-center mb-8 transition-all duration-500" id="login-title">Login</h2>
+            <div class="relative mb-6">
+                <input type="email" required
+                    class="w-full h-12 bg-transparent border-none outline-none text-lg text-white pb-1 border-b-2 transition-all duration-500"
+                    id="email-input">
+                <label class="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-white transition-all duration-500">Email</label>
+            </div>
+            <div class="relative mb-6">
+                <input type="password" required
+                    class="w-full h-12 bg-transparent border-none outline-none text-lg text-white pb-1 border-b-2 transition-all duration-500"
+                    id="password-input">
+                <label class="absolute left-0 top-1/2 transform -translate-y-1/2 text-lg text-white transition-all duration-500">Password</label>
+            </div>
+            <div class="flex justify-between items-center text-white mb-6 text-sm">
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-2 accent-white transition-all duration-500" id="remember-me">
+                    Remember me
+                </label>
+                <a href="#" class="hover:underline">Forgot Password?</a>
+            </div>
+            <button type="submit"
+                class="w-full h-10 bg-white text-gray-900 rounded-full transition-all duration-500"
+                id="login-button">Login</button>
+            <div class="text-white text-center mt-6 transition-all duration-500" id="register-link">
+                <p>Don't have an account? <a href="#" class="font-semibold hover:underline">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const colorInput = document.getElementById('color-input');
+        const lightToggle = document.getElementById('light-toggle');
+        const loginLight = document.getElementById('login-light');
+        const loginTitle = document.getElementById('login-title');
+        const emailInput = document.getElementById('email-input');
+        const passwordInput = document.getElementById('password-input');
+        const rememberMe = document.getElementById('remember-me');
+        const loginButton = document.getElementById('login-button');
+        const registerLink = document.getElementById('register-link');
+        const light = document.getElementById('light');
+        const toggleOff = document.getElementById('toggle-off');
+        const toggleOn = document.getElementById('toggle-on');
+        const toggleLabel = document.getElementById('toggle-label');
+
+        colorInput.addEventListener('input', (e) => {
+            document.documentElement.style.setProperty('--light-color', e.target.value);
+        });
+
+        lightToggle.addEventListener('change', () => {
+            const lightOn = lightToggle.checked;
+
+            loginLight.classList.toggle('bg-light-on', lightOn);
+            loginTitle.classList.toggle('text-light-on', lightOn);
+            emailInput.classList.toggle('text-light-on', lightOn);
+            emailInput.classList.toggle('border-light-on', lightOn);
+            passwordInput.classList.toggle('text-light-on', lightOn);
+            passwordInput.classList.toggle('border-light-on', lightOn);
+            rememberMe.classList.toggle('accent-light-on', lightOn);
+            loginButton.classList.toggle('shadow-light-on', lightOn);
+            registerLink.classList.toggle('text-light-on', lightOn);
+            light.style.top = lightOn ? '-45%' : '-100%';
+
+            toggleOff.classList.toggle('hidden', lightOn);
+            toggleOn.classList.toggle('hidden', !lightOn);
+            toggleLabel.classList.toggle('bg-light-on', lightOn);
+        });
+    </script>
+</body>
+
+</html>
