@@ -1,0 +1,157 @@
+:root {
+    --Green: hsl(75, 94%, 57%);
+    --OffBlack: hsl(0, 0%, 8%);
+    --DarkGrey: hsl(0, 0%, 12%);
+    --Grey: hsl(0, 0%, 20%);
+    --White: hsl(0, 0%, 100%);
+
+    --fuente: 'Inter', sans-serif;
+}
+
+/*hacks y globales*/
+html {
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /*Hack para box model*/
+}
+
+body {
+    background-color: var(--OffBlack);
+    margin: 0;
+    font-family: var(--fuente);
+    color: var(--White);
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+a:hover {
+    color: var(--negro);
+    cursor: pointer;
+}
+
+/* ----- Main ----- */
+
+.contenedor {
+    width: min(80%, 120rem);
+    margin: 0 auto;
+    height: 95vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: var(--DarkGrey);
+    border-radius: 2rem;
+    width: 40rem;
+    height: 70rem;
+    padding: 2rem 1rem;
+}
+
+.perfil {
+    width: 10rem;
+    border-radius: 50%;
+}
+
+.info {
+    line-height: .8;
+    padding-bottom: 1.5rem;
+}
+.name {
+    font-size: 3rem;
+}
+
+.city {
+    color: var(--Green);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.profession {
+    padding-bottom: 1rem;
+}
+
+
+.card__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
+.boton {
+    display: block;
+    font-family: var(--fuente);
+    color: var(--fuente);
+    background-color: var(--Grey);
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 1.5rem 3rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.boton:hover {
+    background-color: var(--Green);
+    color: var(--DarkGrey);
+
+}
+
+
+/* ---- Footer ----- */
+
+.footer {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.link {
+    font-weight: 800;
+    font-style: italic;
+}
+
+.link:hover {
+    color: var(--Green);
+}

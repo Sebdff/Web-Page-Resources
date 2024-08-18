@@ -1,0 +1,151 @@
+:root {
+    --primario: #f4d04e;
+    --gris: #808080;
+    --negro: #121212;
+    --blanco: #ffffff;
+
+    --fuente: 'Figtree', sans-serif;
+}
+
+/*hacks y globales*/
+html {
+    font-size: 62.5%;
+    /* 1 rem = 10px */
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /*Hack para box model*/
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--primario);
+    color: var(--negro);
+    font-family: var(--fuente);
+    margin: 0;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+a:hover {
+    color: var(--negro);
+    cursor: pointer;
+}
+
+/* ----- Main ----- */
+
+.contenedor {
+    width: min(90%, 120rem);
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .contenedor {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        height: 95vh;
+        margin: 0 auto;
+        column-gap: 3rem;
+    }
+}
+
+.card {
+    -webkit-box-shadow: 10px 10px 0px 5px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 10px 10px 0px 5px rgba(0, 0, 0, 1);
+    box-shadow: 5px 5px 0px 3px rgba(0, 0, 0, 1);
+}
+
+.card {
+    width: 30rem;
+    background-color: var(--blanco);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--negro);
+    margin: 0 auto;
+}
+
+.card__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    border-radius: 1rem;
+}
+
+
+.estado {
+    font-size: 1.3rem;
+    font-weight: 800;
+    background-color: var(--primario);
+    padding: .5rem;
+    border-radius: .5rem;
+    display: inline-block;
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+
+.date {
+    font-size: 1.5rem;
+
+}
+
+.titulo {
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.parrafo {
+    color: var(--gris);
+}
+
+.autor {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.autor__img {
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+.autor__name {
+    font-weight: 800;
+}
+
+/* ---- Footer ----- */
+
+.footer {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    font-weight: 800;
+    font-style: italic;
+}

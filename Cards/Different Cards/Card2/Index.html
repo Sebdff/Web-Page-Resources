@@ -1,0 +1,73 @@
+<aside class="terminal">
+  <div class="header">
+    <div class="buttons">
+      <div class="button red"></div>
+      <div class="button yellow"></div>
+      <div class="button green"></div>
+    </div>
+    <p class="title">bash</p>
+  </div>
+  <div class="content">
+    <p class="command">$ npm install next</p>
+    <p class="output">+ next@10.2.3</p>
+    <p class="output">added 1 package, and audited 2 packages in 3s</p>
+    <p class="command">$</p>
+  </div>
+</aside>
+
+<style>
+  .terminal {
+    background-color: black;
+    color: white;
+    padding: 24px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 32rem;
+    font-family: monospace;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .button.red {
+    background-color: #f56565; /* red-500 */
+  }
+
+  .button.yellow {
+    background-color: #ecc94b; /* yellow-500 */
+  }
+
+  .button.green {
+    background-color: #48bb78; /* green-500 */
+  }
+
+  .title {
+    font-size: 0.875rem; /* text-sm */
+  }
+
+  .content {
+    margin-top: 16px; /* mt-4 */
+  }
+
+  .command {
+    color: #68d391; /* text-green-400 */
+  }
+
+  .output {
+    color: white;
+  }
+</style>
