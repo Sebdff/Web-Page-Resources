@@ -1,5 +1,8 @@
 # PlantillasCards
-Códigos usados para crear plantillas de Cards
+# THIS CODE ITS NOT MINE, LINK OF THE CREATOR:
+https://linktr.ee/Crissdev16
+
+Code for cards
 
 Card 1
 ![card1](https://github.com/Criss16FS/CardsTemplates/assets/113220675/1dd918f4-e0d2-48a9-a9b8-0064638d7d21)
