@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon</title>
+  <style>
+    :root {
+      --background: hsl(210, 100%, 6%);
+      --foreground: hsl(180, 100%, 90%);
+      --primary: hsl(200, 100%, 28%);
+      --primary-foreground: hsl(180, 100%, 90%);
+      --secondary: hsl(203, 23%, 30%);
+      --secondary-foreground: hsl(180, 100%, 90%);
+      --accent: hsl(198, 70%, 50%);
+      --accent-foreground: hsl(185, 10%, 13%);
+      --destructive: hsl(0, 98%, 44%);
+      --destructive-foreground: hsl(0, 0%, 100%);
+      --muted: hsl(200, 50%, 30%);
+      --muted-foreground: hsl(180, 100%, 90%);
+      --card: hsl(210, 100%, 12%);
+      --card-foreground: hsl(180, 100%, 90%);
+      --popover: hsl(210, 100%, 15%);
+      --popover-foreground: hsl(180, 100%, 90%);
+      --border: hsl(210, 50%, 40%);
+      --input: hsl(210, 50%, 40%);
+      --ring: hsl(180, 100%, 90%);
+      --chart-1: hsl(200, 100%, 28%);
+      --chart-2: hsl(201, 99%, 25%);
+      --chart-3: hsl(203, 98%, 22%);
+      --chart-4: hsl(204, 100%, 18%);
+      --chart-5: hsl(206, 100%, 15%);
+      --radius: 0rem;
+    }
+    body {
+      font-family: 'Space Mono', monospace;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    .bg-gradient {
+      background: linear-gradient(to bottom right, #4CAF50, #87CEEB);
+    }
+    .text-white { color: #ffffff; }
+    .text-[#4CAF50] { color: #4CAF50; }
+    .hover:bg-white/90:hover { background-color: rgba(255, 255, 255, 0.9); }
+    .bg-white-10 { background-color: rgba(255, 255, 255, 0.1); }
+    .border-input { border-color: hsl(210, 50%, 40%); }
+    .ring-offset-background { box-shadow: 0 0 0 1px var(--ring); }
+    .ring-offset-2 { box-shadow: 0 0 0 2px var(--ring); }
+    .focus-visible:ring-2 { box-shadow: 0 0 0 2px var(--ring); }
+    .focus-visible:ring-offset-2 { box-shadow: 0 0 0 2px var(--ring-offset-background); }
+    .focus-visible:outline-none { outline: none; }
+    .shadow-sm { box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
+    .transition-colors { transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out; }
+    .rounded-md { border-radius: 0.375rem; }
+    .p-2 { padding: 0.5rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .h-10 { height: 2.5rem; }
+    .w-full { width: 100%; }
+    .max-w-md { max-width: 28rem; }
+    .text-center { text-align: center; }
+    .text-sm { font-size: 0.875rem; }
+    .text-lg { font-size: 1.125rem; }
+    .font-bold { font-weight: 700; }
+    .font-medium { font-weight: 500; }
+    .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0, 0, 0, 0); overflow: hidden; white-space: nowrap; }
+    .underline { text-decoration: underline; }
+    .underline-offset-2 { text-underline-offset: 2px; }
+    .hover:underline:hover { text-decoration: underline; }
+    .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 1rem; }
+    .space-y-2 > :not([hidden]) ~ :not([hidden]) { margin-top: 0.5rem; }
+    .space-y-4 > :not([hidden]) ~ :not([hidden]) { margin-top: 1rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .flex { display: flex; }
+    .min-h-[100dvh] { min-height: 100vh; }
+    .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+    .fixed { position: fixed; }
+    .top-0 { top: 0; }
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+    .z-10 { z-index: 10; }
+    .text-white { color: #ffffff; }
+    .bg-white { background-color: #ffffff; }
+    .bg-transparent { background-color: transparent; }
+    .font-medium { font-weight: 500; }
+    .hover:bg-white/90:hover { background-color: rgba(255, 255, 255, 0.9); }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .space-x-6 > :not([hidden]) ~ :not([hidden]) { margin-left: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="flex min-h-[100dvh] flex-col items-center justify-center bg-gradient px-4 py-16 sm:px-6 lg:px-8">
+    <header class="fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+      <a class="flex items-center gap-2" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-6 w-6">
+          <path d="m8 3 4 8 5-5 5 15H2L8 3z"></path>
+        </svg>
+        <span class="sr-only">Acme Inc</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <div class="flex items-center space-x-6">
+          <a class="text-white hover:underline" href="#">
+            <span class="sr-only">GitHub</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+          </a>
+          <a class="text-white hover:underline" href="#">
+            <span class="sr-only">Instagram</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a class="text-white hover:underline" href="#">
+            <span class="sr-only">X</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5">
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="mx-auto max-w-md text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">Coming Soon</h1>
+      <p class="mt-4 text-lg text-white">
+        Get ready for the launch of our exciting new product. Sign up below to be the first to know when we go live.
+      </p>
+      <form class="mt-6 flex w-full max-w-sm items-center space-x-4">
+        <input
+          class="flex h-10 w-full border-input text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1 rounded-md border-0 bg-white-10 px-4 py-2 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4CAF50]"
+          type="email"
+          placeholder="Enter your email"
+        />
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 rounded-md bg-white px-4 py-2 text-[#4CAF50] font-medium shadow-sm transition-colors hover:bg-white/90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#4CAF50]"
+          type="submit"
+        >
+          Sign Up
+        </button>
+      </form>
+    </div>
+  </div>
+  <script>
+    // Aquí puedes añadir JavaScript si es necesario
+  </script>
+</body>
+</html>

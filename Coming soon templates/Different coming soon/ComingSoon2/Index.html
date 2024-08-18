@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000000;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+            background-size: 400% 400%;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            animation: cardGradientAnimation 3s ease infinite, fadeIn 2s;
+        }
+
+        @keyframes cardGradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            font-size: 2.5em;
+            color: #ffffff;
+        }
+
+        p {
+            margin: 0;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .countdown {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ffffff;
+        }
+
+        .countdown span {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .notify {
+            margin-top: 20px;
+        }
+
+        .notify input[type="email"] {
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            width: 70%;
+            max-width: 300px;
+            margin-bottom: 10px;
+        }
+
+        .notify button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #1f2c73;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .notify button:hover {
+            background-color: #ffffff;
+            color: #1f2c73;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="card">
+            <h1>Coming Soon</h1>
+            <p>We are working hard to bring you something amazing. Stay tuned!</p>
+            <p class="countdown">
+                Launching in <span class="days"></span>d 
+                <span class="hours"></span>h 
+                <span class="minutes"></span>m 
+                <span class="seconds"></span>s
+            </p>
+            <div class="notify">
+                <p>Stay notified:</p>
+                <input type="email" placeholder="Enter your email" required>
+                <button>Notify Me</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const endDate = new Date('2024-12-31T00:00:00');
+            const daysElement = document.querySelector('.countdown .days');
+            const hoursElement = document.querySelector('.countdown .hours');
+            const minutesElement = document.querySelector('.countdown .minutes');
+            const secondsElement = document.querySelector('.countdown .seconds');
+
+            function updateCountdown() {
+                const now = new Date();
+                const remainingTime = endDate - now;
+
+                const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+                daysElement.textContent = days;
+                hoursElement.textContent = hours;
+                minutesElement.textContent = minutes;
+                secondsElement.textContent = seconds;
+
+                if (remainingTime < 0) {
+                    clearInterval(interval);
+                    daysElement.textContent = '0';
+                    hoursElement.textContent = '0';
+                    minutesElement.textContent = '0';
+                    secondsElement.textContent = '0';
+                }
+            }
+
+            const interval = setInterval(updateCountdown, 1000);
+            updateCountdown();
+        });
+    </script>
+</body>
+</html>
